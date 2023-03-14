@@ -1,4 +1,4 @@
-use std::io::{self, Read};
+use std::io;
 
 fn main() {
     let a = [1, 2, 3, 4, 5];
