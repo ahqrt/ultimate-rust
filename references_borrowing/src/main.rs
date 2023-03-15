@@ -52,4 +52,7 @@ fn change(some_string: &mut String) {
 fn dangle() -> &String {
     let s = String::from("hello");
     &s
+    // the error cuz s is created inside dangle, and the code of dangle is finished
+    // s will deallocated. but we tried to return the reference to it.
+    // so the reference would be pointing to an invalid string.
 }
