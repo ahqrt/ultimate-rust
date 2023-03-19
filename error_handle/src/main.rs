@@ -1,5 +1,5 @@
 use std::{
-    fs::File,
+    fs::{self, File},
     io::{self, ErrorKind, Read},
 };
 
@@ -58,8 +58,10 @@ fn read_username_from_file() -> Result<String, io::Error> {
     // username_file_result.read_to_string(&mut username)?;
     // Ok(username)
 
-    let mut username = String::new();
+    // let mut username = String::new();
 
-    File::open("hello.txt")?.read_to_string(&mut username)?;
-    Ok(username)
+    // File::open("hello.txt")?.read_to_string(&mut username)?;
+    // Ok(username)
+
+    fs::read_to_string("hello.txt")
 }
