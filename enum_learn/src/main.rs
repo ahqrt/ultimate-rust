@@ -49,6 +49,12 @@ impl<T> Point<T> {
     }
 }
 
+impl Point<f32> {
+    fn distance_from_origin(&self) -> f32 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
 fn main() {
     // let number_list = vec![34, 50, 25, 100, 65];
     // let result = largest(&number_list);
@@ -59,7 +65,8 @@ fn main() {
     // println!("The largest char is {}", result);
 
     let integer = Point { x: 5, y: 10 };
-    let float = Point { x: 12.0, y: 11.0 };
+    let float: Point<f32> = Point { x: 12.0, y: 11.0 };
 
     println!("{}", integer.x());
+    println!("{}", float.distance_from_origin());
 }
