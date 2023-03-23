@@ -1,8 +1,11 @@
-use std::collections::HashMap;
+use traits_learn::{Summary, Tweet};
 
 fn main() {
-    let mut map = HashMap::new();
-    map.insert(String::from("Hello"), 10);
-
-    println!("{:?}", map);
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from("of course, as you probably already know, people"),
+        reply: false,
+        retweet: false,
+    };
+    println!("1 new tweet {}", tweet.summarize());
 }
