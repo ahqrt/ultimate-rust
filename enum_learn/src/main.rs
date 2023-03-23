@@ -35,12 +35,31 @@ fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     largest
 }
 
-fn main() {
-    let number_list = vec![34, 50, 25, 100, 65];
-    let result = largest(&number_list);
-    println!("The largest number is {}", result);
+// generic struct
 
-    let char_list = vec!['y', 'm', 'a', 'q'];
-    let result = largest(&char_list);
-    println!("The largest char is {}", result);
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+// impl method definitions
+impl<T> Point<T> {
+    fn x(&self) -> &T {
+        &self.x
+    }
+}
+
+fn main() {
+    // let number_list = vec![34, 50, 25, 100, 65];
+    // let result = largest(&number_list);
+    // println!("The largest number is {}", result);
+
+    // let char_list = vec!['y', 'm', 'a', 'q'];
+    // let result = largest(&char_list);
+    // println!("The largest char is {}", result);
+
+    let integer = Point { x: 5, y: 10 };
+    let float = Point { x: 12.0, y: 11.0 };
+
+    println!("{}", integer.x());
 }
