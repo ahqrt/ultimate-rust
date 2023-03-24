@@ -1,4 +1,4 @@
-use traits_learn::{NewsArticle, Summary, Tweet};
+use traits_learn::{notify, NewsArticle, Summary, Tweet};
 
 fn main() {
     let tweet = Tweet {
@@ -19,6 +19,9 @@ fn main() {
         ),
     };
 
-    println!("1 new tweet {}", tweet.summarize());
-    println!("new article available! {}", article.summarize());
+    // println!("1 new tweet {}", tweet.summarize());
+    // println!("new article available! {}", article.summarize());
+
+    notify(&tweet);
+    notify(&article);
 }
