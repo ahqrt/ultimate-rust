@@ -22,6 +22,9 @@ fn main() {
     // println!("1 new tweet {}", tweet.summarize());
     // println!("new article available! {}", article.summarize());
 
-    notify(&tweet);
-    notify(&article);
+    // notify(&tweet);
+    // notify(&article);
 }
+
+
+
