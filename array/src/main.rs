@@ -1,15 +1,33 @@
-use std::io;
+#[derive(Debug, PartialEq)]
+struct Shoe {
+    size: u32,
+    style: String,
+}
+
+fn shoes_in_size(shoes: Vec<Shoe>, shoe_size: u32) -> Vec<Shoe> {
+    shoes.into_iter().filter(|s| s.size == shoe_size).collect()
+}
+
+fn filters_by_size() {
+    let shoes = vec![
+        Shoe {
+            size: 10,
+            style: String::from("sneaker"),
+        },
+        Shoe {
+            size: 13,
+            style: String::from("sandal"),
+        },
+        Shoe {
+            size: 10,
+            style: String::from("boot"),
+        },
+    ];
+
+    let in_my_size = shoes_in_size(shoes, 10);
+    println!("{:?}", in_my_size);
+}
 
 fn main() {
-    let a = [1, 2, 3, 4, 5];
-    println!("Please enter an array index.");
-    let mut index = String::new();
-
-    io::stdin().read_line(&mut index).unwrap();
-
-    let index: usize = index.trim().parse().unwrap();
-
-    let element = a[index];
-
-    println!("The value of the element at index {index} is {element}")
+    filters_by_size();
 }
